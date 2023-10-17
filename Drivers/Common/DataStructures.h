@@ -14,12 +14,14 @@
 #define meas_data_type_SPS30_extended  	0x02
 #define meas_data_type_ADS 				0x03
 #define meas_data_type_HDC  			0x04
+#define meas_data_type_battery			0x05
 
 typedef enum {
 	None = -1,
 	ADS = 0,
 	HDC2080 = 1,
-	SPS30 = 2
+	SPS30 = 2,
+	Battery = 3
 } SensorType;
 
 typedef enum {
@@ -65,6 +67,10 @@ struct generalized_meas_data {
 	SensorType sensor;
 	uint8_t connector;
 	void *data;
+};
+
+struct battery_data {
+	uint16_t voltage;
 };
 
 #endif /* COMMON_DATASTRUCTURES_H_ */

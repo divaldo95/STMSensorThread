@@ -147,6 +147,7 @@ int send_meas_data_packet(uint8_t meas_data_type, uint8_t *meas_data, uint8_t me
 int send_sps30_meas_data(struct sps30_measurement meas);
 int send_ads_data(struct ADS_data *meas);
 int send_hdc_data(struct HDC_data *meas);
+int send_battery_data(struct battery_data *meas);
 
 static void APP_THREAD_SPS_WarmUP(void);
 static void StartTask();
@@ -951,6 +952,11 @@ int send_ads_data(struct ADS_data *meas)
 int send_hdc_data(struct HDC_data *meas)
 {
 	return send_meas_data_packet(meas_data_type_HDC, (uint8_t *)meas, sizeof(struct HDC_data));
+}
+
+int send_battery_data(struct battery_data *meas)
+{
+	return send_meas_data_packet(meas_data_type_battery, (uint8_t *)meas, sizeof(struct battery_data));
 }
 /*
 static otError UdpSendSPS30(struct sps30_measurement meas)
