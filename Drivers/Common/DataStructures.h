@@ -10,9 +10,10 @@
 
 #include <inttypes.h>
 
-#define meas_data_type_SPS30  	0x01
-#define meas_data_type_ADS 		0x02
-#define meas_data_type_HDC  	0x03
+#define meas_data_type_SPS30  			0x01
+#define meas_data_type_SPS30_extended  	0x02
+#define meas_data_type_ADS 				0x03
+#define meas_data_type_HDC  			0x04
 
 typedef enum {
 	None = -1,
@@ -38,16 +39,20 @@ struct sps30_measurement {
     float nc_4p0;
     float nc_10p0;
     float typical_particle_size;
+    uint8_t connector;
 };
 
 struct ADS_data {
 	float milivolts;
 	int16_t raw;
+
+	uint8_t connector;
 };
 
 struct HDC_data {
 	float temperature;
 	uint8_t humidity;
+	uint8_t connector;
 };
 
 struct all_meas_data {

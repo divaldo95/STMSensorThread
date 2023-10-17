@@ -260,7 +260,7 @@ void APP_THREAD_Init( void )
   UTIL_SEQ_RegTask( 1<<(uint32_t)CFG_TASK_SPS_WARMUP, UTIL_SEQ_RFU, warm_up);
 
   //HW_TS_Create(CFG_TIM_PROC_ID_ISR, &standbyTimerId, hw_ts_SingleShot, APP_THREAD_UdpSend); //next will be this function, start the timer from warmup
-    if ( HW_TS_Create(CFG_TIM_PROC_ID_ISR, &standbyTimerId, hw_ts_SingleShot, RunSendMeas) == hw_ts_Successful )
+    if ( HW_TS_Create(CFG_TIM_PROC_ID_ISR, &standbyTimerId, hw_ts_SingleShot, APP_THREAD_UdpSend) == hw_ts_Successful ) //RunSendMeas
 	{
 		printf("HW_TS_Create successful\r\n");
 	}
@@ -314,6 +314,8 @@ void APP_THREAD_Init( void )
 	#endif
 #endif // AUTO_SCAN_SENSORS
 
+  	char found_device[100];
+  	ssd1306_Fill(Black);
 #ifdef AUTO_SCAN_SENSORS
   	printf("Scanning all bus for connected sensors\r\n");
   	for (uint8_t i = 0; i < 4; i++)
@@ -321,9 +323,14 @@ void APP_THREAD_Init( void )
   		printf("Scanning bus %d...\r\n", i);
   		connected_sensors[i] = i2c_sensor_scan(i);
   		get_sensor_name_by_type(connected_sensors[i], dev_name, 20);
-  		printf("Found device on bus %d: %s\r\n", i, dev_name);
+  		printf("\r\nFound device on bus %d: %s\r\n", i, dev_name);
+  		snprintf(found_device, 100, "Bus %d: %s", i, dev_name);
+  		ssd1306_SetCursor(0, i*13);
+  		ssd1306_WriteString(found_device, Font_6x8, White);
   		init_sensor_on_bus_by_type(connected_sensors[i], i);
   	}
+  	ssd1306_UpdateScreen();
+  	HAL_Delay(5000);
 #endif
 
   /* USER CODE END APP_THREAD_INIT_2 */
@@ -789,10 +796,10 @@ static void APP_THREAD_UdpSend(void)
   calculate_times(&time_interval);
   //HW_TS_Create(CFG_TIM_PROC_ID_ISR, &standbyTimerId, hw_ts_SingleShot, APP_THREAD_UdpSend); //next will be this function, start the timer from warmup
   //UTIL_SEQ_SetTask(TASK_UDP_SEND, CFG_SCH_PRIO_1);
-  //HW_TS_Start(standbyTimerId, time_interval);
+  HW_TS_Start(standbyTimerId, SEC_5);
   current_state = Measurement;
 
-  printf("Next measurement: %ld\r\n", time_interval);
+  printf("Next measurement: %ld\r\n", SEC_5);
 
   int current_line = 0;
 
@@ -815,21 +822,24 @@ static void APP_THREAD_UdpSend(void)
 		  case ADS:
 			  ads_measure_single(i, ADS_SAMPLES_PER_SEC, ADS_GAIN, &ads.raw);
 			  ads.milivolts = ads_get_mV(&ads.raw, ADS_SAMPLES_PER_SEC, ADS_GAIN);
+			  ads.connector = i;
 			  send_ads_data(&ads);
 			  snprintf (buffer, 100,"Raw: %d   mV: %.2f" , ads.raw, ads.milivolts);
-			  ssd1306_SetCursor(current_line, 0);
+			  ssd1306_SetCursor(0, current_line);
 			  ssd1306_WriteString(buffer, Font_6x8, White);
-			  current_line += 20;
+			  current_line += 13;
 			  break;
 		  case HDC2080:
 			  hdc2080_measure(i, &hdc.temperature, &hdc.humidity);
+			  hdc.connector = i;
 			  send_hdc_data(&hdc);
 			  snprintf (buffer, 100,"Temp: %.2f Hum: %d" , hdc.temperature, hdc.humidity);
-			  ssd1306_SetCursor(current_line, 0);
+			  ssd1306_SetCursor(0, current_line);
 			  ssd1306_WriteString(buffer, Font_6x8, White);
-			  current_line += 20;
+			  current_line += 13;
 			  break;
 		  case SPS30:
+			  SPS30_connector = i;
 			  int16_t ret = sps30_read_measurement(&m);
 			  if (ret < 0)
 			  {
@@ -844,27 +854,29 @@ static void APP_THREAD_UdpSend(void)
 				//RestartTask();
 				return;
 			  }
+			  m.connector = i;
 			  snprintf (buffer, 100,"nc2.5 %.2f n/cm3  " , m.nc_2p5);
-			  ssd1306_SetCursor(current_line, 0);
+			  ssd1306_SetCursor(0, current_line);
 			  ssd1306_WriteString(buffer, Font_6x8, White);
-
+			  current_line += 13;
 			  snprintf (buffer, 100,"nc10 %.2f n/cm3  " , m.nc_10p0);
-			  ssd1306_SetCursor(current_line, 13);
+			  ssd1306_SetCursor(0, current_line);
 			  ssd1306_WriteString(buffer, Font_6x8, White);
-
+			  current_line += 13;
 			  snprintf (buffer, 100,"mc2.5 %.2f ug/m3   " , m.mc_2p5);
-			  ssd1306_SetCursor(current_line, 26);
+			  ssd1306_SetCursor(0, current_line);
 			  ssd1306_WriteString(buffer, Font_6x8, White);
-
+			  current_line += 13;
 			  snprintf (buffer, 100,"mc10 %.2f ug/m3   ",  m.mc_10p0);
-			  ssd1306_SetCursor(current_line, 39);
+			  ssd1306_SetCursor(0, current_line);
 			  ssd1306_WriteString(buffer, Font_6x8, White);
 			  send_sps30_meas_data(m);
-			  current_line += 20;
+			  current_line += 13;
 			  break;
 		  default:
 			  break;
 		  }
+		  ssd1306_UpdateScreen();
 	  }
 
 	#ifdef emulate_sps30
@@ -928,7 +940,7 @@ static void APP_THREAD_UdpSend(void)
 
 int send_sps30_meas_data(struct sps30_measurement meas)
 {
-	return send_meas_data_packet(meas_data_type_SPS30, (uint8_t *)&meas, 10*sizeof(float));
+	return send_meas_data_packet(meas_data_type_SPS30_extended, (uint8_t *)&meas, sizeof(struct sps30_measurement));
 }
 
 int send_ads_data(struct ADS_data *meas)
@@ -1067,14 +1079,17 @@ static void StartTask()
 	printf("SetTask call ended\r\n");
 	//warm_up();
 	 */
-
+	char dev_name[100];
 	uint8_t sps_available = 0;
 	printf("Warmup with timer id %d\r\n", standbyTimerId);
-	if (current_state == Off && !standbyTimerId )
+	if (current_state == Off)
 	{
 		printf("Init connected sensors...\r\n");
 		for (uint8_t i = 0; i < 4; i++)
 		{
+			get_sensor_name_by_type(connected_sensors[i], dev_name, 100);
+			if (connected_sensors[i] != None)
+				printf("Init %s...\r\n", dev_name);
 			if ( init_sensor_on_bus_by_type(connected_sensors[i], i) != HAL_OK )
 			{
 				return;
@@ -1100,7 +1115,7 @@ static void StartTask()
 
 void RunSendMeas() {
 	printf("Timer fired\r\n");
-	//UTIL_SEQ_SetTask(CFG_TASK_UDP_SEND, CFG_SCH_PRIO_1);
+	UTIL_SEQ_SetTask(CFG_TASK_UDP_SEND, CFG_SCH_PRIO_1);
 }
 
 /*

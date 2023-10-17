@@ -24,7 +24,7 @@ int8_t i2c_mux_select(uint8_t connector)
 		last_selected_bus = bus;
 
 	}
-
+	//printf("Selected bus: %d\r\n", connector);
 	return 0;
 }
 
@@ -63,7 +63,7 @@ SensorType i2c_sensor_scan(uint8_t connector)
 {
 	if(i2c_mux_select(connector) < 0)
 	{
-		printf("Failed to change i2c mux to %d\n", connector);
+		printf("Failed to change i2c mux to %d\r\n", connector);
 		return -1;
 	}
 	printf("Scanning I2C bus:\r\n");
@@ -100,7 +100,7 @@ SensorType i2c_sensor_scan(uint8_t connector)
 	  {
 		  if (addr > 0)
 		  {
-			  printf("Multiple devices connected to connector %d: 0x%X, 0x%X\n", connector, addr, i);
+			  printf("Multiple devices connected to connector %d: 0x%X, 0x%X\r\n", connector, addr, i);
 		  }
 		  else
 		  {

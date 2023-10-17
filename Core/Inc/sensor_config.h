@@ -15,7 +15,8 @@
 	#define HDC_connector 	1
 	#define ADS_connector	2
 #else
-	static uint8_t SPS30_connector = 0;
+	extern uint8_t SPS30_connector; //declare it as global at one place!
+	// see: https://stackoverflow.com/questions/16079235/static-variable-cpp-do-not-want-to-change
 #endif
 
 //#define emulate_sps30 1

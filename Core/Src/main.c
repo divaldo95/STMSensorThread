@@ -55,7 +55,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint8_t SPS30_connector = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -76,6 +76,11 @@ PUTCHAR_PROTOTYPE
   HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
 
   return ch;
+}
+
+void RTC_WKUP_IRQHandler(void)
+{
+	HW_TS_RTC_Wakeup_Handler();
 }
 
 /* USER CODE END 0 */
@@ -127,6 +132,7 @@ int main(void)
   ssd1306_Init();
   ssd1306_Fill(Black);
   ssd1306_WriteString("Hello STM32 Thread!\n", Font_6x8, White);
+  ssd1306_UpdateScreen();
   enable_5v();
 
   /* USER CODE END 2 */

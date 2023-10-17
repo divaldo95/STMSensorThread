@@ -72,7 +72,7 @@ uint16_t init_sensor_on_bus_by_type(SensorType type, uint8_t connector)
 {
 	if(i2c_mux_select(connector) < 0)
 	{
-		printf("Failed to change i2c mux to %d\n", connector);
+		printf("Failed to change i2c mux to %d\r\n", connector);
 		return HAL_ERROR;
 	}
 	switch(type)
@@ -83,31 +83,33 @@ uint16_t init_sensor_on_bus_by_type(SensorType type, uint8_t connector)
 		case HDC2080:
 			if ( hdc2080_init(connector, HDC2080_TEMP_RES, HDC2080_HUM_RES) != HAL_OK )
 			{
-				printf("Could not init HDC2080\n");
+				printf("Could not init HDC2080\r\n");
 			}
 			return HAL_OK;
 		case SPS30:
-			if(sps30_probe() == 0)
+			SPS30_connector = connector;
+			printf("SPS30_connector: %d\r\n", SPS30_connector);
+			if(sps30_probe() == NO_ERROR)
 			{
-				SPS30_connector = connector;
+				HAL_Delay(200);
 				int ret = sps30_start_measurement();
 				if (ret < 0)
 				{
-					printf("Could not init SPS30 on connector %d\n", connector);
+					printf("Could not init SPS30 on connector %d\r\n", connector);
 					return HAL_ERROR;
 				}
 			}
 			else
 			{
-				printf("Could not probe SPS30 on connector %d\n", connector);
+				printf("Could not probe SPS30 on connector %d\r\n", connector);
 				return HAL_ERROR;
 			}
 			return HAL_OK;
 		case None:
-			printf("Nothing to be done for a None device\n");
+			//printf("Nothing to be done for a None device\r\n");
 			return HAL_OK;
 		default:
-			printf("I don't know how to init Unknown device :(\n");
+			printf("I don't know how to init Unknown device :(\r\n");
 			return HAL_OK;
 	}
 }
@@ -116,7 +118,7 @@ uint16_t deinit_sensor_on_bus_by_type(SensorType type, uint8_t connector)
 {
 	if(i2c_mux_select(connector) < 0)
 	{
-		printf("Failed to change i2c mux to %d\n", connector);
+		printf("Failed to change i2c mux to %d\r\n", connector);
 		return HAL_ERROR;
 	}
 	switch(type)
@@ -133,21 +135,21 @@ uint16_t deinit_sensor_on_bus_by_type(SensorType type, uint8_t connector)
 				int ret = sps30_stop_measurement();
 				if (ret < 0)
 				{
-					printf("Could not stop SPS30 on connector %d\n", connector);
+					printf("Could not stop SPS30 on connector %d\r\n", connector);
 					return HAL_ERROR;
 				}
 			}
 			else
 			{
-				printf("Could not probe SPS30 (deinit) on connector %d\n", connector);
+				printf("Could not probe SPS30 (deinit) on connector %d\r\n", connector);
 				return HAL_ERROR;
 			}
 			return HAL_OK;
 		case None:
-			printf("Nothing to be done for a None device\n");
+			printf("Nothing to be done for a None device\r\n");
 			return HAL_OK;
 		default:
-			printf("I don't know how to deinit Unknown device :(\n");
+			printf("I don't know how to deinit Unknown device :(\r\n");
 			return HAL_OK;
 	}
 }
