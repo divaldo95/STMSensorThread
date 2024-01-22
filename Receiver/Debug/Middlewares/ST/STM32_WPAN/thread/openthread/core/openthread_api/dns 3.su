@@ -1,0 +1,4 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dns.c:33:6:otDnsInitTxtEntryIterator	32	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dns.c:52:9:otDnsGetNextTxtEntry	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dns.c:72:6:otDnsSetNameCompressionEnabled	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dns.c:89:6:otDnsIsNameCompressionEnabled	16	static

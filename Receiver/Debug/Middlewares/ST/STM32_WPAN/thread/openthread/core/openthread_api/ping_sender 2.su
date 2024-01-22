@@ -1,0 +1,2 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/ping_sender.c:34:9:otPingSenderPing	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/ping_sender.c:51:6:otPingSenderStop	24	static

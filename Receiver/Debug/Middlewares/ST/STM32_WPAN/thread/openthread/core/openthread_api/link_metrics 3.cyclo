@@ -1,0 +1,4 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/link_metrics.c:46:9:otLinkMetricsQuery	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/link_metrics.c:73:9:otLinkMetricsConfigForwardTrackingSeries	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/link_metrics.c:103:9:otLinkMetricsConfigEnhAckProbing	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/link_metrics.c:134:9:otLinkMetricsSendLinkProbe	1

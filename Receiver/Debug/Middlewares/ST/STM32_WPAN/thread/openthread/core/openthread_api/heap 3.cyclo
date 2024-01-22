@@ -1,0 +1,2 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/heap.c:33:7:otHeapCAlloc	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/heap.c:41:6:otHeapFree	1

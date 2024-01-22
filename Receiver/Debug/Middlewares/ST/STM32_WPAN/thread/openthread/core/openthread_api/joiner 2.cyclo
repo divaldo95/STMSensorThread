@@ -1,0 +1,7 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/joiner.c:35:9:otJoinerStart	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/joiner.c:67:6:otJoinerStop	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/joiner.c:82:15:otJoinerGetState	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/joiner.c:98:21:otJoinerGetId	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/joiner.c:114:9:otJoinerSetDiscerner	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/joiner.c:131:26:otJoinerGetDiscerner	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/joiner.c:147:13:otJoinerStateToString	1

@@ -1,0 +1,16 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:34:6:otDatasetIsCommissioned	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:50:9:otDatasetGetActive	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:67:9:otDatasetGetActiveTlvs	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:84:9:otDatasetSetActive	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:101:9:otDatasetSetActiveTlvs	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:118:9:otDatasetGetPending	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:135:9:otDatasetGetPendingTlvs	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:152:9:otDatasetSetPending	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:169:9:otDatasetSetPendingTlvs	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:186:9:otDatasetSendMgmtActiveGet	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:210:9:otDatasetSendMgmtActiveSet	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:237:9:otDatasetSendMgmtPendingGet	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:261:9:otDatasetSendMgmtPendingSet	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:289:9:otDatasetGeneratePskc	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:312:9:otNetworkNameFromString	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/dataset.c:330:9:otDatasetParseTlvs	1

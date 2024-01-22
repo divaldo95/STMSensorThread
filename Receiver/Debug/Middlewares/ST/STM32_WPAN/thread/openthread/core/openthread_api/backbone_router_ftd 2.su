@@ -1,0 +1,13 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:36:6:otBackboneRouterSetEnabled	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:50:23:otBackboneRouterGetState	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:64:6:otBackboneRouterGetConfig	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:78:9:otBackboneRouterSetConfig	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:93:9:otBackboneRouterRegister	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:107:9:otBackboneRouterGetRegistrationJitter	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:121:6:otBackboneRouterSetRegistrationJitter	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:135:9:otBackboneRouterGetDomainPrefix	24	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:150:6:otBackboneRouterSetDomainPrefixCallback	32	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:171:6:otBackboneRouterSetNdProxyCallback	32	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:189:9:otBackboneRouterGetNdProxyInfo	32	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:251:6:otBackboneRouterConfigNextDuaRegistrationResponse	32	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/backbone_router_ftd.c:315:6:otBackboneRouterConfigSkipSeqNumIncrease	24	static

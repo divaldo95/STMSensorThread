@@ -1,0 +1,10 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/instance.c:54:13:otInstanceInitSingle	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/instance.c:71:6:otInstanceIsInitialized	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/instance.c:87:6:otInstanceFinalize	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/instance.c:102:6:otInstanceReset	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/instance.c:156:9:otSetStateChangedCallback	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/instance.c:176:6:otRemoveStateChangeCallback	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/instance.c:195:6:otInstanceFactoryReset	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/instance.c:210:9:otInstanceErasePersistentInfo	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/instance.c:244:13:otGetVersionString	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/instance.c:260:13:otGetRadioVersionString	1

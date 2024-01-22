@@ -1,0 +1,16 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:40:9:otCommissionerStart	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:63:9:otCommissionerStop	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:79:9:otCommissionerAddJoiner	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:101:9:otCommissionerAddJoinerWithDiscerner	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:123:9:otCommissionerGetNextJoinerInfo	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:141:9:otCommissionerRemoveJoiner	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:158:9:otCommissionerRemoveJoinerWithDiscerner	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:175:13:otCommissionerGetProvisioningUrl	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:191:9:otCommissionerSetProvisioningUrl	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:208:9:otCommissionerAnnounceBegin	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:232:9:otCommissionerEnergyScan	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:263:9:otCommissionerPanIdQuery	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:289:9:otCommissionerSendMgmtGet	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:307:9:otCommissionerSendMgmtSet	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:329:10:otCommissionerGetSessionId	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/commissioner.c:345:21:otCommissionerGetState	1

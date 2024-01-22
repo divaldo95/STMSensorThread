@@ -1,0 +1,4 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/icmp6.c:35:17:otIcmp6GetEchoMode	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/icmp6.c:51:6:otIcmp6SetEchoMode	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/icmp6.c:67:9:otIcmp6RegisterHandler	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/icmp6.c:85:9:otIcmp6SendEchoRequest	1

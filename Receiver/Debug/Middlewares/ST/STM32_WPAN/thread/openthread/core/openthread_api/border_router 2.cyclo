@@ -1,0 +1,8 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/border_router.c:124:9:otBorderRouterGetNetData	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/border_router.c:143:9:otBorderRouterAddOnMeshPrefix	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/border_router.c:160:9:otBorderRouterRemoveOnMeshPrefix	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/border_router.c:177:9:otBorderRouterGetNextOnMeshPrefix	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/border_router.c:197:9:otBorderRouterAddRoute	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/border_router.c:214:9:otBorderRouterRemoveRoute	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/border_router.c:231:9:otBorderRouterGetNextRoute	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/border_router.c:251:9:otBorderRouterRegister	1

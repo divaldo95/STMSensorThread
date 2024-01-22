@@ -1,0 +1,11 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:35:9:otUdpAddReceiver	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:52:9:otUdpRemoveReceiver	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:69:9:otUdpSendDatagram	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:87:12:otUdpNewMessage	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:104:9:otUdpOpen	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:123:6:otUdpIsOpen	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:141:6:otUdpIsPortInUse	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:159:9:otUdpClose	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:176:9:otUdpBind	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:195:9:otUdpConnect	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/udp.c:213:9:otUdpSend	1

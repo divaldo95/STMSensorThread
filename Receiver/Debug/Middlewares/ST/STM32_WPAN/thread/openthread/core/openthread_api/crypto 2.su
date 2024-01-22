@@ -1,0 +1,2 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/crypto.c:32:6:otCryptoHmacSha256	32	static
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/crypto.c:53:6:otCryptoAesCcm	32	static

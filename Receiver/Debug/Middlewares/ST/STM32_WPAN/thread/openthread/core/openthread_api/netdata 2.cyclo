@@ -1,0 +1,8 @@
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/netdata.c:34:9:otNetDataGet	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/netdata.c:54:9:otNetDataGetNextOnMeshPrefix	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/netdata.c:73:9:otNetDataGetNextRoute	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/netdata.c:92:9:otNetDataGetNextService	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/netdata.c:110:9:otNetDataGetVersion	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/netdata.c:126:9:otNetDataGetStableVersion	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/netdata.c:142:9:otNetDataSteeringDataCheckJoiner	1
+../Middlewares/ST/STM32_WPAN/thread/openthread/core/openthread_api/netdata.c:159:9:otNetDataSteeringDataCheckJoinerWithDiscerner	1
